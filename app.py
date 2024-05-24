@@ -127,7 +127,7 @@ params = {
         'dropoff_latitude': dropoff_latitude,
         'passenger_count': passenger_count
     }
-st.json(params)
+# st.json(params)
 
 
 col5, col6 = st.columns(2)
