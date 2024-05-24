@@ -98,15 +98,15 @@ point_layer = pdk.Layer(
     pickable=True
 )
 
-
-if "map_display" not in st.session_state:
-    st.session_state.map_display = st.pydeck_chart(pdk.Deck(
+# if "map_display" not in st.session_state:
+    # st.session_state.map_display =
+st.pydeck_chart(pdk.Deck(
         map_style='mapbox://styles/mapbox/light-v11',
         initial_view_state=view_state,
         layers=[point_layer],  # line_layer
         tooltip={"text": "{name}"}
     ))
-st.session_state.map_display
+# st.session_state.map_display
 
 
 # Parameter Preparation
