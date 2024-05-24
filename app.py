@@ -107,8 +107,8 @@ st.pydeck_chart(pdk.Deck(
 
 # Parameter Preparation
 col3, col4 = st.columns(2)
-pickup_date = col3.date_input('Pickup Date', value=dt.date.today())
-pickup_time = col4.time_input('Pickup Time')
+pickup_date = col3.date_input('Pickup Date')  # value=dt.date.today()
+pickup_time = col4.time_input('Pickup Time')  # value=dt.datetime.now().time()
 pickup_datetime = f"{pickup_date} {pickup_time}"
 
 # Passenger Slider
