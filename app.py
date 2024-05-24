@@ -88,6 +88,7 @@ data = [
 #     pickable=False
 # )
 
+
 point_layer = pdk.Layer(
     'ScatterplotLayer',
     data=data,
@@ -97,19 +98,23 @@ point_layer = pdk.Layer(
     pickable=True
 )
 
-st.pydeck_chart(pdk.Deck(
-    map_style='mapbox://styles/mapbox/streets-v11',
-    initial_view_state=view_state,
-    layers=[point_layer],  # line_layer
-    tooltip={"text": "{name}"}
-))
+
+if "map_display" not in st.session_state:
+    st.session_state.map_display = st.pydeck_chart(pdk.Deck(
+        map_style='mapbox://styles/mapbox/streets-v11',
+        initial_view_state=view_state,
+        layers=[point_layer],  # line_layer
+        tooltip={"text": "{name}"}
+    ))
 
 
 # Parameter Preparation
 col3, col4 = st.columns(2)
-pickup_date = col3.date_input('Pickup Date')  # value=dt.date.today()
-pickup_time = col4.time_input('Pickup Time')  # value=dt.datetime.now().time()
-pickup_datetime = f"{pickup_date} {pickup_time}"
+if "pickup_date" not in st.session_state:
+    st.session_state.pickup_date = col3.date_input('Pickup Date')  # value=dt.date.today()
+if "pickup_time" not in st.session_state:
+    st.session_state.pickup_time = col4.time_input('Pickup Time')  # value=dt.datetime.now().time()
+pickup_datetime = f"{st.session_state.pickup_date} {st.session_state.pickup_time}"
 
 # Passenger Slider
 passenger_count = st.slider('Number of Passengers', 1, 8, 1)
