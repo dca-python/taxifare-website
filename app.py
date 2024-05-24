@@ -152,4 +152,29 @@ if col5.button('Calculate Fare') and all(params.values()):
     prediction_string = format(prediction, '.2f')
     col6.metric("Your Fare", f"$ {prediction_string}")
 else:
-    col6.metric("Your Fare", "$ 0")
+    col6.metric("Your Fare", "$ 0.00")
+
+# CSS to style the box
+box_style = """
+    <style>
+    .fare-box {
+        border: 2px solid grey;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        margin-top: 10px;
+    }
+    </style>
+"""
+
+# HTML content
+fare_content = f"""
+    <div class="fare-box">
+        <h3>Your Fare</h3>
+        <p style="font-size: 24px;">$ {prediction_string}</p>
+    </div>
+"""
+
+# Inject CSS and HTML into Streamlit
+st.markdown(box_style, unsafe_allow_html=True)
+col6.markdown(fare_content, unsafe_allow_html=True)
