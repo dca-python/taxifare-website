@@ -131,17 +131,17 @@ params = {
 
 col5, col6 = st.columns(2)
 
-st.markdown("""
-    <style>
-    div.stButton > button:first-child {
-        background-color: dark-grey;
-        color: white;
-        height: 4em;
-        width: 8em;
-        font-size: 20px;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#     div.stButton > button:first-child {
+#         background-color: dark-grey;
+#         color: white;
+#         height: 4em;
+#         width: 8em;
+#         font-size: 20px;
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
 
 
 # Fare Prediction Functionality
