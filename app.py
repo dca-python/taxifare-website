@@ -43,8 +43,8 @@ st.markdown('''
 ''')
 
 col1, col2 = st.columns(2)
-pickup_input = col1.text_input('Pickup Location', 'Empire State Building')
-dropoff_input = col2.text_input('Dropoff Location', 'City Hall')
+pickup_input = col1.text_input('Pickup Location', 'Central Park')
+dropoff_input = col2.text_input('Dropoff Location', 'Empire State Building')
 pickup = "new york " + pickup_input.lower() if "new york" not in pickup_input.lower() else pickup_input.lower()
 dropoff = "new york " + dropoff_input.lower() if "new york" not in pickup_input.lower() else pickup_input.lower()
 
@@ -134,7 +134,7 @@ col5, col6 = st.columns(2)
 st.markdown("""
     <style>
     div.stButton > button:first-child {
-        background-color: grey;
+        background-color: dark-grey;
         color: white;
         height: 4em;
         width: 8em;
@@ -150,6 +150,6 @@ if col5.button('Calculate Fare') and all(params.values()):
     prediction_json = response.json()
     prediction = round(prediction_json["fare"], 2)
     prediction_string = format(prediction, '.2f')
-    col6.metric("Your Fare", f"$ {prediction_string}", "hello")
+    col6.metric("Your Fare", f"$ {prediction_string}")
 else:
     col6.metric("Your Fare", "$ 0")
