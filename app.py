@@ -4,7 +4,6 @@ import requests
 import datetime as dt
 
 PREDICTION_URL = 'https://taxifare.lewagon.ai/predict'
-MAPBOXGL_ACCESS_TOKEN = 'pk.eyJ1Ijoia3Jva3JvYiIsImEiOiJja2YzcmcyNDkwNXVpMnRtZGwxb2MzNWtvIn0.69leM_6Roh26Ju7Lqb2pwQ'
 
 
 def get_coordinates(location):
