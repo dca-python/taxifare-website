@@ -150,6 +150,6 @@ if col5.button('Calculate Fare') and all(params.values()):
     prediction_json = response.json()
     prediction = round(prediction_json["fare"], 2)
     prediction_string = format(prediction, '.2f')
-    col6.metric("Your Fare", f"$ {prediction_string}")
+    col6.metric("Your Fare", f"$ {prediction_string}", "hello")
 else:
     col6.metric("Your Fare", "$ 0")
